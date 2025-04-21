@@ -89,24 +89,24 @@ const char *getStrConf(param_t param)
 	switch (param) {
 		case CERTIFICATE:
 			setting = config_lookup(&configuration, "certificate");
-			if (!setting)
-				return "/etc/umurmur/certificate.crt";
+			if (!setting) // Si no está configurado, devuelve NULL
+				return NULL;
 			else {
 				if ((strsetting = config_setting_get_string(setting)) != NULL)
 					return strsetting;
 				else
-					return "/etc/umurmur/certificate.crt";
+					return NULL; // Si no es válido, también devuelve NULL
 			}
 			break;
 		case KEY:
 			setting = config_lookup(&configuration, "private_key");
-			if (!setting)
-				return "/etc/umurmur/private_key.key";
+			if (!setting) // Si no está configurado, devuelve NULL
+				return NULL;
 			else {
 				if ((strsetting = config_setting_get_string(setting)) != NULL)
 					return strsetting;
 				else
-					return "/etc/umurmur/private_key.key";
+					return NULL; // Si no es válido, también devuelve NULL
 			}
 			break;
 		case CAPATH:

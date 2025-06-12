@@ -1,4 +1,4 @@
-max_bandwidth = 48000;
+max_bandwidth = 256000;
 welcometext = "Welcome to uMurmur!";
 certificate = "/etc/umurmur/certificate.crt";
 private_key = "/etc/umurmur/private_key.key";
@@ -51,18 +51,18 @@ channels = (
 		silent = true; # Optional. Default is false
 	},
 	{
-		name = "Red team";
+		name = "Mosqueteros";
 		parent = "Lobby";
-		description = "The Red team channel";
+		description = "The mosqueteros channel";
 		position = 0;   # Optional. Default is 0 and the channels will be shown in alphabetic order
 		# password = "redpw";
 		# By default, temporary channel creation is disallowed. Enabled on a per-channel basis.
 		allow_temp = true; # Optional. Default is false
 	},
 	{
-		name = "Blue team";
+		name = "La canchita";
 		parent = "Lobby";
-		description = "The Blue team channel";
+		description = "La canchita channel";
 		position = 1;   # Optional. Default is 0 and the channels will be shown in alphabetic order.
 		# password = "bluepw";
 	}
@@ -72,11 +72,11 @@ channels = (
 channel_links = (
 	{
 		source = "Lobby";
-		destination = "Red team";
+		destination = "Mosqueteros";
 	},
 	{
 		source = "Lobby";
-		destination = "Blue team";
+		destination = "La canchita";
 	}
 );
 
